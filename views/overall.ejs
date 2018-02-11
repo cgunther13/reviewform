@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Overall Assessment</title>
+		<meta charset="utf-8" />
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- JavaScript -->
+		<script src="../controllers/reviewform.js"></script>
+  </head>
+  <body>
+
+		<!-- Project Details -->
+		<% if (type == "Reviewee (Self-Evaluation)") { %>
+			<form action="/project-details" method="post">
+			  Reviewee Roles: <input type="text" name="reviewee_rolls"><br>
+
+        <input type="submit" value="Next">
+      </form>
+
+		<% } else { %>
+			<form action="/project-details" method="post">
+			  Reviewee Rolls: <input type="text" name="reviewee_rolls"><br>
+				Reviewee Strengths:
+          <input type="text" name="reviewee_strengths"><br>
+          <input type="text" name="reviewee_strengths"><br>
+          <input type="text" name="reviewee_strengths"><br>
+        Reviewee Development Areas:
+          <input type="text" name="reviewee_devs"><br>
+          <input type="text" name="reviewee_devs"><br>
+          <input type="text" name="reviewee_devs"><br>
+
+        <input type="submit" value="Next">
+      </form>
+
+		<% } %>
+
+  </body>
+</html>

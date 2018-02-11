@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Start</title>
+		<meta charset="utf-8" />
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- JavaScript -->
+		<script src="../controllers/reviewform.js"></script>
+  </head>
+  <body>
+
+		<!-- Select Review Type -->
+		<form action="/review-type" method="post">
+			<select id="role" name="role">
+	      <option id="analyst" selected="selected">Analyst</a>
+	      <option id="senior_analyst">Senior Analyst</a>
+	      <option id="consultant">Consultant</a>
+				<option id="manager">Manager</a>
+			</select>
+
+			<select id="type" name="type">
+	      <option id="reviewee" selected="selected">Reviewee (Self-Evaluation)</a>
+	      <option id="reviewer">Reviewer</a>
+			</select>
+
+			<input type="submit" value="Next">
+		</form>
+
+  </body>
+</html>

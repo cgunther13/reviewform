@@ -1,0 +1,27 @@
+{
+  "name": "reviewform",
+  "version": "1.0.0",
+  "description": "Online review form for AV&Co.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgunther13/reviewform.git"
+  },
+  "author": "Chris Gunther",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgunther13/reviewform/issues"
+  },
+  "homepage": "https://github.com/cgunther13/reviewform#readme",
+  "dependencies": {
+    "connect-pg-simple": "^4.2.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "nodemon": "^1.14.12",
+    "pg": "^7.4.1"
+  }
+}
