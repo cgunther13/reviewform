@@ -15,14 +15,8 @@ const port = process.env.PORT || 4000;
 
 const connString = process.env.DATABASE_URL || 'postgres://localhost:4000/reviews';
 
-// Prune old sessions
-
 // Store session
 app.use(session({
-  store: new pgSession({
-    pg : pg,
-    conString : connString,
-  }),
   secret: process.env.FOO_COOKIE_SECRET || 'chrisfordirector',
   resave: false,
   saveUninitialized : false,

@@ -18,11 +18,9 @@ function insertReviewType(type, role, callback){
 }
 
 function insertProjectDetails(type, role, reviewee_name, reviewer_name, project_code, project_start, project_end, review_date, team, composition, callback){
-  console.log("3")
   if (type == "Reviewee (Self-Evaluation)") {
     client.query("INSERT INTO SELFREVIEWS(reviewee_name, project_code) VALUES($1, $2)", [reviewee_name, project_code], (callback));
   } else {
-    console.log("4")
     client.query("INSERT INTO REVIEWS(reviewee_name, reviewer_name, project_code, project_start, project_end, review_date, team, composition) VALUES($1, $2, $3, $4, $5, $6, $7, $8)", [reviewee_name, reviewer_name, project_code, project_start, project_end, review_date, team, composition], (callback));
   }
 }
