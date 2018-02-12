@@ -1,4 +1,140 @@
-.levels {
-  border: 1px solid black;
-    border-collapse: collapse;
+/* Menu */
+#header {
+  padding: 20px 0;
 }
+
+#menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #DCDCDC;
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+}
+
+#menu li {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#menu li a {
+  display: inline-block;
+  float: left;
+  color: #191970;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#menu li a.active {
+  background-color: ;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#menu li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+
+/* Review Pages */
+#review-type, #project-details, #overall, #problem-solving {
+  margin: 0 5% 0 20%;
+  /* border: 2px solid black; */
+}
+
+.category {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #191970;
+  text-align: center;
+  padding: 0;
+}
+
+.titles {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #191970;
+  text-decoration: none;
+}
+
+.reviewee_name, .reviewer_name, .team, .composition {
+  padding: 0 1.5% 0 0;
+  width: 45%;
+  float: left;
+}
+
+.project_code {
+  width: 20%;
+}
+
+.project_start, .project_end, .review_date {
+  padding: 0;
+  width: 30%;
+  float: left;
+}
+
+label {
+  display: block;
+  padding: 10px 0;
+}
+
+select {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+  /* Next Buttons */
+  input[type=submit] {
+    width: 15%;
+    align: center;
+    background-color: #191970;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 14px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+/* input[type=radio] {
+  display: inline-block;
+  text-align: center;
+} */
+
+table {
+  width: 100%;
+}
+
+  td {
+    /* border: 1px solid black; */
+    vertical-align: text-top;
+    width: 15%;
+    padding: 5px;
+  }
+
+    td:first-child {
+      width: 40%;
+    }

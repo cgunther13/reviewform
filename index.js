@@ -43,10 +43,15 @@ app.get('/', (req, res) => {
 });
 app.post('/review-type', Controllers.postReviewType);
 
-// app.get('/project-details', (req, res) => {
-//   res.render('project-details');
-// });
+app.get('/project-details', (req, res) => {
+  res.render('project-details');
+});
 app.post('/project-details', Controllers.postProjectDetails);
+
+app.get('/problem-solving', (req, res) => {
+  res.render('problem-solving');
+});
+// app.post('/problem-solving', Controllers.postProblemSolving);
 
 
 app.listen(port, () => console.log('Example app listening on port ' + port +'!'))

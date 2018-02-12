@@ -30,7 +30,7 @@ function postProjectDetails(req, res) {
       next(req, res, 'overall', req.session.type, req.session.role);
     }
   }
-  
+
   if(req.body.type == "Reviewee (Self-Evaluation)") {
     Models.insertProjectDetails(req.session.type, req.session.role, req.body.reviewee_name, req.body.project_code, callback);
   } else {

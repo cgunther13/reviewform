@@ -8,24 +8,41 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!-- JavaScript -->
 		<script src="../controllers/reviewform.js"></script>
+
+		<!-- Header and Footer -->
   </head>
   <body>
+		<div id="header">
+			<img src="./images/F_Altman_Vilandrie_Logo.png" alt="Altman Vilandrie & Co." height="50">
+		</div>
+		<ul id="menu">
+			<li><a href="/review-type">Review Type</a></li>
+			<li><a href="/project-details">Project Details</a></li>
+			<li><a href="/problem-solving">Problem Solving</a></li>
+		</ul>
 
 		<!-- Select Review Type -->
+
 		<form action="/review-type" method="post">
-			<select id="role" name="role">
-	      <option id="analyst" selected="selected">Analyst</a>
-	      <option id="senior_analyst">Senior Analyst</a>
-	      <option id="consultant">Consultant</a>
-				<option id="manager">Manager</a>
-			</select>
 
-			<select id="type" name="type">
-	      <option id="reviewee" selected="selected">Reviewee (Self-Evaluation)</a>
-	      <option id="reviewer">Reviewer</a>
-			</select>
+			<div id="review-type">
+				<label for="role">Role</label>
+				<select id="role" name="role">
+		      <option id="analyst" selected="selected">Analyst</a>
+		      <option id="senior_analyst">Senior Analyst</a>
+		      <option id="consultant">Consultant</a>
+					<option id="manager">Manager</a>
+				</select>
 
-			<input type="submit" value="Next">
+				<label for="type">Type</label>
+				<select id="type" name="type">
+		      <option id="reviewee" selected="selected">Reviewee (Self-Evaluation)</a>
+		      <option id="reviewer">Reviewer</a>
+				</select>
+
+				<input type="submit" value="Next">
+			</div>
+
 		</form>
 
   </body>

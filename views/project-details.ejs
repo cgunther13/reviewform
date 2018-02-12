@@ -7,32 +7,72 @@
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!-- JavaScript -->
-		<script src="../controllers/reviewform.js"></script>
+		<!-- <script src="../controllers/reviewform.js"></script> -->
   </head>
   <body>
+		<div id="header">
+			<img src="./images/F_Altman_Vilandrie_Logo.png" alt="Altman Vilandrie & Co." height="50">
+		</div>
+		<ul id="menu">
+			<li><a href="/review-type">Review Type</a></li>
+			<li><a href="/project-details">Project Details</a></li>
+			<li><a href="/problem-solving">Problem Solving</a></li>
+		</ul>
 
-		<!-- Project Details -->
-		<% if (type == "Reviewee (Self-Evaluation)") { %>
-			<form action="/project-details" method="post">
-			  Reviewee: <input type="text" name="reviewee_name"><br>
-				Project Code: <input type="text" name="project_code"><br>
+		<div id="project-details">
+			<!-- Project Details -->
+			<% if (type == "Reviewee (Self-Evaluation)") { %>
+				<form action="/project-details" method="post">
+				  Reviewee: <input type="text" name="reviewee_name"><br>
+					Project Code: <input type="text" name="project_code"><br>
 
-        <input type="submit" value="Next">
-      </form>
-		<% } else { %>
-			<form action="/project-details" method="post">
-			  Reviewee: <input type="text" name="reviewee_name"><br>
-				Reviewer: <input type="text" name="reviewer_name"><br>
-				Project Code: <input type="text" name="project_code"><br>
-				Project Start: <input type="date" name="project_start"><br>
-				Project End: <input type="date" name="project_end"><br>
-				Review Date: <input type="date" name="review_date"><br>
-				Team: <input type="text" name="team"><br>
-				Composition: <input type="text" name="composition"><br>
+	        <input type="submit" value="Next">
+	      </form>
+			<% } else { %>
+				<form action="/project-details" method="post">
+					<div class="names">
+						<div class="reviewee_name">
+							<label for="reviewee-name">Reviewee Name</label>
+							<input type="text" name="reviewee_name">
+						</div>
+						<div class="reviewer_name">
+							<label for="reviewer-name">Reviewer Name</label>
+							<input type="text" name="reviewer_name"><br>
+						</div>
+					</div>
+					<div class="project_code">
+						<label for="project-code">Project Code</label>
+						<input type="text" name="project_code"><br>
+					</div>
+					<div class="dates">
+						<div class="project_start">
+							<label for="project-start">Project Start</label>
+							<input type="date" name="project_start">
+						</div>
+						<div class="project_end">
+							<label for="project-end">Project End</label>
+							<input type="date" name="project_end">
+						</div>
+						<div class="review_date">
+							<label for="review-date">Review Date</label>
+							<input type="date" name="review_date"><br>
+						</div>
+					</div>
+					<div class="teams">
+						<div class="team">
+							<label for="team">Team</label>
+							<input type="text" name="team"><br>
+						</div>
+						<div class="composition">
+							<label for="composition">Composition</label>
+							<input type="text" name="composition"><br>
+						</div>
+					</div>
 
-        <input type="submit" value="Next">
-      </form>
-		<% } %>
+	        <input type="submit" value="Next">
+	      </form>
+			<% } %>
+		</div>
 
   </body>
 </html>

@@ -10,31 +10,42 @@
 		<script src="../controllers/reviewform.js"></script>
   </head>
   <body>
+		<div id="header">
+			<img src="./images/F_Altman_Vilandrie_Logo.png" alt="Altman Vilandrie & Co." height="50">
+		</div>
+		<ul id="menu">
+			<li><a href="/review-type">Review Type</a></li>
+			<li><a href="/project-details">Project Details</a></li>
+			<li><a href="/problem-solving">Problem Solving</a></li>
+		</ul>
 
-		<!-- Project Details -->
-		<% if (type == "Reviewee (Self-Evaluation)") { %>
-			<form action="/project-details" method="post">
-			  Reviewee Roles: <input type="text" name="reviewee_rolls"><br>
+		<div id="overall">
 
-        <input type="submit" value="Next">
-      </form>
+			<!-- Project Details -->
+			<% if (type == "Reviewee (Self-Evaluation)") { %>
+				<form action="/project-details" method="post">
+				  Reviewee Roles: <input type="text" name="reviewee_rolls"><br>
 
-		<% } else { %>
-			<form action="/project-details" method="post">
-			  Reviewee Rolls: <input type="text" name="reviewee_rolls"><br>
-				Reviewee Strengths:
-          <input type="text" name="reviewee_strengths"><br>
-          <input type="text" name="reviewee_strengths"><br>
-          <input type="text" name="reviewee_strengths"><br>
-        Reviewee Development Areas:
-          <input type="text" name="reviewee_devs"><br>
-          <input type="text" name="reviewee_devs"><br>
-          <input type="text" name="reviewee_devs"><br>
+	        <input type="submit" value="Next">
+	      </form>
 
-        <input type="submit" value="Next">
-      </form>
+			<% } else { %>
+				<form action="/project-details" method="post">
+				  Reviewee Roles: <input type="text" name="reviewee_rolls"><br>
+					Reviewee Strengths:
+	          <input type="text" name="reviewee_strengths"><br>
+	          <input type="text" name="reviewee_strengths"><br>
+	          <input type="text" name="reviewee_strengths"><br>
+	        Reviewee Development Areas:
+	          <input type="text" name="reviewee_devs"><br>
+	          <input type="text" name="reviewee_devs"><br>
+	          <input type="text" name="reviewee_devs"><br>
 
-		<% } %>
+	        <input type="submit" value="Next">
+	      </form>
+
+			<% } %>
+		</div>
 
   </body>
 </html>
