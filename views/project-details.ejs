@@ -23,10 +23,15 @@
 			<!-- Project Details -->
 			<% if (type == "Reviewee (Self-Evaluation)") { %>
 				<form action="/project-details" method="post">
-				  Reviewee: <input type="text" name="reviewee_name"><br>
-					Project Code: <input type="text" name="project_code"><br>
-
-	        <input type="submit" value="Next">
+					<div class="reviewee_name">
+						<label for="reviewee-name">Reviewee Name</label>
+						<input type="text" name="reviewee_name">
+					</div>
+					<div class="project_code">
+						<label for="project-code">Project Code</label>
+						<input type="text" name="project_code"><br>
+					</div>
+					<input type="submit" value="Next">
 	      </form>
 			<% } else { %>
 				<form action="/project-details" method="post">

@@ -3,23 +3,17 @@ const path = require('path');
 var Models = require('../models/reviews.js');
 
 function postReviewType(req, res) {
-  var callback = function(type, role, err) {
-    console.log("5")
+  var callback = function(role, type, err) {
     if (err) {
-      console.log("5.5")
       return res.sendStatus(500);
     } else {
-      console.log("6")
-      next(req, res, 'project-details', req.session.type, req.session.role);
+      next(req, res, 'project-details', role, type);
     }
   }
-
-  // Store the session
-  req.session.type = req.body.type;
-  req.session.role = req.body.role;
-
-  // Insert review type into the REVIEWS database
-  Models.insertReviewType(req.session.type, req.session.role, callback);
+  // Insert review type into the (SELF)REVIEWS database
+  Models.insertReviewType(req.session.email, req.body.role, req.body.type, callback);
+  // Get review details from the (SELF)REVIEWS database and store the session
+  Models.storeReviewSession(req, req.body.role, req.body.type);
 }
 
 function postProjectDetails(req, res) {
@@ -27,31 +21,20 @@ function postProjectDetails(req, res) {
     if (err) {
       return res.sendStatus(500);
     } else {
-      next(req, res, 'overall', req.session.type, req.session.role);
+      next(req, res, 'overall', type, role);
     }
   }
-
-  if(req.body.type == "Reviewee (Self-Evaluation)") {
-    Models.insertProjectDetails(req.session.type, req.session.role, req.body.reviewee_name, req.body.project_code, callback);
+  if(req.session.type == "Reviewee (Self-Evaluation)") {
+    Models.insertProjectDetails(req.session.role, req.session.type, req.body.reviewee_name, req.body.project_code, callback);
   } else {
-    Models.insertProjectDetails(req.session.type, req.session.role, req.body.reviewee_name, req.body.reviewer_name, req.body.project_code, req.body.project_start, req.body.project_end, req.body.review_date, req.body.team, req.body.composition, callback);
+    Models.insertProjectDetails(req.session.role, req.session.type, req.body.reviewee_name, req.body.reviewer_name, req.body.project_code, req.body.project_start, req.body.project_end, req.body.review_date, req.body.team, req.body.composition, callback);
   }
 }
 
-function submit(req, res) {
-  var callback = function(err) {
-    if (err) {
-      return res.sendStatus(500);
-    } else {
-      res.redirect('/review-type');
-    }
-  }
-  req.session.destroy(callback);
+function next(req, res, page, role, type) {
+  res.render(page, { role: role, type: type });
 }
 
-function next(req, res, page, type, role) {
-  res.render(page, { type: type, role: role });
-}
 
 module.exports = {
   postReviewType: postReviewType,
